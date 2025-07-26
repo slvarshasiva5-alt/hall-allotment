@@ -1,0 +1,111 @@
+index.html
+html
+Copy
+Edit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seminar Hall Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a href="index.html" target="_blank">Open Seminar Hall Booking Form</a>
+
+
+  <div class="container">
+    <h1>Seminar Hall Booking Form</h1>
+    <form id="bookingForm">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email:</labe
+      <input type="email" id="email" required />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
+
+      <label for="time">Time Slot:</label>
+      <select id="time" required>
+        <option value="">Select a slot</option>
+        <option value="9am-11am">9 AM - 11 AM</option>
+        <option value="12pm-2pm">12 PM - 2 PM</option>
+        <option value="3pm-5pm">3 PM - 5 PM</option>
+      </select>
+
+      <label for="purpose">Purpose:</label>
+      <textarea id="purpose" rows="4" required></textarea>
+
+      <button type="submit">Book Now</button>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+🎨 2. style.css
+css
+Copy
+Edit
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-top: 15px;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+#message {
+  margin-top: 20px;
+  text-align: center;
+  color: green;
+}
+⚙ 3. script.js (Optional JS for confirmation message)
+javascript
+Copy
+Edit
+document.getElementById("bookingForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Simple success message
+  document.getElementById("message").textContent = "Booking Submitted Successfully!";
+  
+  // Optional: clear form
+  this.reset();
+});
